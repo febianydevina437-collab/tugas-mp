@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILLIT Dreamverse - Faldo Febiano (XI RPL 3)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-rose-50 via-purple-50 to-sky-50 dark:from-slate-950 dark:via-purple-950 dark:to-slate-900 text-slate-700 dark:text-slate-200 transition-colors duration-300 font-sans min-h-screen flex flex-col">
+
+    <nav class="sticky top-0 z-40 bg-white/75 dark:bg-slate-900/80 backdrop-blur-md border-b border-pink-100 dark:border-purple-900/50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#hero" class="flex items-center space-x-2">
+                <span class="text-xl sm:text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400">
+                    ILLIT Dreamverse ✨
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-600 dark:text-slate-300">
+                <a href="#hero" class="hover:text-pink-500 dark:hover:text-pink-300 transition">Beranda</a>
+                <a href="#members" class="hover:text-pink-500 dark:hover:text-pink-300 transition">Profil Member</a>
+                <a href="#features" class="hover:text-pink-500 dark:hover:text-pink-300 transition">Pesona ILLIT</a>
+                <a href="#pricing" class="hover:text-pink-500 dark:hover:text-pink-300 transition">Membership</a>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <button 
+                    onclick="document.documentElement.classList.toggle('dark')" 
+                    class="px-3 py-2 rounded-full bg-pink-100/80 dark:bg-purple-900/60 text-pink-600 dark:text-pink-200 hover:bg-pink-200 dark:hover:bg-purple-800 transition text-xs sm:text-sm font-semibold flex items-center gap-1.5 shadow-sm"
+                    aria-label="Toggle Dark Mode">
+                    <span class="dark:hidden">🌙 Mode Gelap</span>
+                    <span class="hidden dark:inline">☀️ Mode Terang</span>
+                </button>
+                <a href="#pricing" class="hidden sm:inline-block px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-pink-400 to-purple-400 hover:from-pink-500 hover:to-purple-500 rounded-full shadow-sm transition">
+                    Gabung GLLIT
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold tracking-wide text-pink-600 dark:text-pink-300 bg-pink-100/80 dark:bg-pink-950/60 rounded-full border border-pink-200 dark:border-pink-800/60 mb-6">
+            <span>🎀 Karya Proyek Tailwind CSS • Faldo Febiano (XI RPL 3)</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-800 dark:text-white leading-tight">
+            Masuki Dunia Magis <br class="hidden sm:inline">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400">
+                SUPER REAL ME — ILLIT
+            </span>
+        </h1>
+
+        <p class="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Platform penggemar global (GLLIT) untuk mengenal lebih dekat Yunah, Minju, Moka, Wonhee, dan Iroha. Klik tombol member di bawah untuk melihat biodata dan galeri foto mereka!
+        </p>
+
+        <div id="members" class="mt-8 scroll-mt-24">
+            <p class="text-xs font-semibold uppercase tracking-wider text-pink-400 dark:text-pink-300 mb-3">
+                ✨ Klik Member untuk Biodata & Galeri Foto ✨
+            </p>
+            <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3">
+                <button onclick="openMemberModal('yunah')" class="px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white/90 dark:bg-slate-800/90 text-pink-500 dark:text-pink-300 border border-pink-200 dark:border-pink-800/60 shadow-sm hover:scale-105 hover:bg-pink-50 dark:hover:bg-slate-700 transition cursor-pointer">
+                    🐆 Yunah
+                </button>
+                <button onclick="openMemberModal('minju')" class="px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white/90 dark:bg-slate-800/90 text-purple-500 dark:text-purple-300 border border-purple-200 dark:border-purple-800/60 shadow-sm hover:scale-105 hover:bg-purple-50 dark:hover:bg-slate-700 transition cursor-pointer">
+                    🐰 Minju
+                </button>
+                <button onclick="openMemberModal('moka')" class="px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white/90 dark:bg-slate-800/90 text-sky-500 dark:text-sky-300 border border-sky-200 dark:border-sky-800/60 shadow-sm hover:scale-105 hover:bg-sky-50 dark:hover:bg-slate-700 transition cursor-pointer">
+                    ☕ Moka
+                </button>
+                <button onclick="openMemberModal('wonhee')" class="px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white/90 dark:bg-slate-800/90 text-rose-500 dark:text-rose-300 border border-rose-200 dark:border-rose-800/60 shadow-sm hover:scale-105 hover:bg-rose-50 dark:hover:bg-slate-700 transition cursor-pointer">
+                    🐿️ Wonhee
+                </button>
+                <button onclick="openMemberModal('iroha')" class="px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white/90 dark:bg-slate-800/90 text-indigo-500 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800/60 shadow-sm hover:scale-105 hover:bg-indigo-50 dark:hover:bg-slate-700 transition cursor-pointer">
+                    🐢 Iroha
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+            <a href="#pricing" class="w-full sm:w-auto px-8 py-3.5 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 hover:opacity-90 rounded-2xl shadow-lg shadow-pink-200/50 dark:shadow-purple-900/30 transition duration-200">
+                Get Started ✨
+            </a>
+            <a href="#features" class="w-full sm:w-auto px-8 py-3.5 text-sm sm:text-base font-semibold text-slate-600 dark:text-slate-200 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-800 border border-pink-100 dark:border-slate-700 rounded-2xl transition duration-200">
+                Jelajahi Pesona ILLIT
+            </a>
+        </div>
+    </section>
+
+    <section id="features" class="py-16 bg-white/50 dark:bg-slate-900/50 border-y border-pink-100 dark:border-purple-900/40 scroll-mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white">Pesona Utama ILLIT</h2>
+                <p class="mt-3 text-sm sm:text-base text-slate-500 dark:text-slate-400">
+                    Konsep remaja ceria, penuh imajinasi, dan melodi adiktif yang menemani harimu.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <div class="p-6 sm:p-8 bg-white/90 dark:bg-slate-800/90 rounded-3xl border border-pink-100 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-pink-100 dark:bg-pink-900/40 text-pink-500 dark:text-pink-300 text-2xl mb-5">
+                        🧲
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-white mb-2">Magnetic Melodies</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Dengarkan rilisan ikonik mulai dari <em>Magnetic</em>, <em>Cherish (My Love)</em>, hingga <em>Tick-Tack</em> dengan kualitas audio jernih dan lirik interaktif.
+                    </p>
+                </div>
+
+                <div class="p-6 sm:p-8 bg-white/90 dark:bg-slate-800/90 rounded-3xl border border-purple-100 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-purple-100 dark:bg-purple-900/40 text-purple-500 dark:text-purple-300 text-2xl mb-5">
+                        ☁️
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-white mb-2">Dreamcore Aesthetics</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Galeri foto konsep <em>I'LL LIKE YOU</em> dan <em>SUPER REAL ME</em> dengan palet warna pastel lembut yang memanjakan mata di mode terang maupun gelap.
+                    </p>
+                </div>
+
+                <div class="p-6 sm:p-8 bg-white/90 dark:bg-slate-800/90 rounded-3xl border border-sky-100 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-sky-100 dark:bg-sky-900/40 text-sky-500 dark:text-sky-300 text-2xl mb-5">
+                        💌
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-white mb-2">GLLIT Connect</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Kirim surat dukungan langsung ke Yunah, Minju, Moka, Wonhee, dan Iroha serta dapatkan notifikasi siaran langsung eksklusif.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow scroll-mt-16">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white">Pilih Paket GLLIT Membership</h2>
+            <p class="mt-3 text-sm sm:text-base text-slate-500 dark:text-slate-400">
+                Dukung perjalanan musik ILLIT dan dapatkan akses konten spesial setiap bulan.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="p-8 bg-white/90 dark:bg-slate-800/90 rounded-3xl border border-pink-100 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="inline-block px-3 py-1 text-xs font-semibold text-sky-600 dark:text-sky-300 bg-sky-100 dark:bg-sky-950/60 rounded-full mb-3">
+                        Starter Fan
+                    </span>
+                    <h3 class="text-xl font-bold text-slate-800 dark:text-white">GLLIT Basic</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Cocok untuk penggemar baru yang ingin mengikuti update harian.</p>
+                    <div class="my-6">
+                        <span class="text-3xl sm:text-4xl font-extrabold text-slate-800 dark:text-white">Rp 45.000</span>
+                        <span class="text-slate-500 dark:text-slate-400 text-sm">/bulan</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300 mb-8">
+                        <li class="flex items-center gap-2"><span>🌸</span> Akses foto eksklusif di balik layar</li>
+                        <li class="flex items-center gap-2"><span>🌸</span> Badge digital GLLIT di profil</li>
+                        <li class="flex items-center gap-2"><span>🌸</span> Ucapan ulang tahun digital dari member</li>
+                    </ul>
+                </div>
+                <a href="#registration" onclick="selectPlan('GLLIT Basic (Rp 45.000/bulan)')" class="w-full text-center py-3 font-semibold text-pink-600 dark:text-pink-300 bg-pink-50 dark:bg-pink-950/50 hover:bg-pink-100 dark:hover:bg-pink-900/50 rounded-2xl transition">
+                    Pilih GLLIT Basic
+                </a>
+            </div>
+
+            <div class="p-8 bg-white dark:bg-slate-800 rounded-3xl border-2 border-pink-300 dark:border-purple-500 shadow-xl shadow-pink-100/60 dark:shadow-purple-950/40 flex flex-col justify-between relative">
+                <span class="absolute -top-3.5 right-6 bg-gradient-to-r from-pink-400 to-purple-400 text-white text-xs font-bold uppercase px-3.5 py-1 rounded-full shadow-sm">
+                    Paling Diminati ✨
+                </span>
+                <div>
+                    <span class="inline-block px-3 py-1 text-xs font-semibold text-purple-600 dark:text-purple-300 bg-purple-100 dark:bg-purple-950/60 rounded-full mb-3">
+                        VIP Dreamer
+                    </span>
+                    <h3 class="text-xl font-bold text-slate-800 dark:text-white">GLLIT Super Real</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Pengalaman lengkap tanpa batas bersama seluruh member ILLIT.</p>
+                    <div class="my-6">
+                        <span class="text-3xl sm:text-4xl font-extrabold text-slate-800 dark:text-white">Rp 129.000</span>
+                        <span class="text-slate-500 dark:text-slate-400 text-sm">/bulan</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300 mb-8">
+                        <li class="flex items-center gap-2"><span>💖</span> Semua keuntungan paket GLLIT Basic</li>
+                        <li class="flex items-center gap-2"><span>💖</span> Pre-sale tiket konser & fanmeeting</li>
+                        <li class="flex items-center gap-2"><span>💖</span> Photocard digital edisi terbatas tiap bulan</li>
+                    </ul>
+                </div>
+                <a href="#registration" onclick="selectPlan('GLLIT Super Real (Rp 129.000/bulan)')" class="w-full text-center py-3 font-semibold text-white bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 hover:opacity-90 rounded-2xl shadow-md transition">
+                    Langganan Super Real
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration" class="py-16 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto w-full scroll-mt-20">
+        <div class="p-8 sm:p-10 bg-white/90 dark:bg-slate-800/90 rounded-3xl border border-pink-200 dark:border-purple-800/60 shadow-lg">
+            <div class="text-center mb-6">
+                <span class="px-3 py-1 text-xs font-semibold text-pink-600 dark:text-pink-300 bg-pink-100 dark:bg-pink-950/60 rounded-full">
+                    💌 Formulir GLLIT Resmi
+                </span>
+                <h3 class="mt-3 text-2xl font-bold text-slate-800 dark:text-white">Selesaikan Pendaftaran Membership</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Isi data dirimu di bawah ini untuk mengaktifkan akses GLLIT.</p>
+            </div>
+
+            <form onsubmit="handleSubscribe(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Paket Dipilih</label>
+                    <input id="selectedPlanInput" type="text" value="GLLIT Super Real (Rp 129.000/bulan)" readonly class="w-full px-4 py-3 rounded-xl bg-pink-50/70 dark:bg-slate-900/80 border border-pink-200 dark:border-purple-800 text-pink-600 dark:text-pink-300 font-semibold text-sm focus:outline-none">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Nama GLLIT</label>
+                        <input type="text" required placeholder="Contoh: Faldo Febiano" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-pink-100 dark:border-slate-700 text-sm focus:outline-none focus:border-pink-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Bias Utama di ILLIT</label>
+                        <select class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-pink-100 dark:border-slate-700 text-sm focus:outline-none focus:border-pink-400">
+                            <option>OT5 (Semua Member ✨)</option>
+                            <option>🐆 Yunah</option>
+                            <option>🐰 Minju</option>
+                            <option>☕ Moka</option>
+                            <option>🐿️ Wonhee</option>
+                            <option>🐢 Iroha</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="w-full py-3.5 mt-2 font-semibold text-white bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 hover:opacity-90 rounded-2xl shadow-md transition cursor-pointer">
+                    Konfirmasi & Aktifkan Membership 💖
+                </button>
+            </form>
+
+            <div id="subscribeSuccess" class="hidden mt-4 p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-sm text-center font-medium">
+                🎉 Selamat datang di keluarga GLLIT! Paket membership kamu berhasil diaktifkan.
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-pink-100 dark:border-purple-900/50 bg-white/75 dark:bg-slate-900/85 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <span class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">
+                    ILLIT Dreamverse
+                </span>
+                <p class="text-sm font-medium text-slate-600 dark:text-slate-300 mt-1">
+                    Dibuat oleh <span class="text-pink-500 dark:text-pink-400 font-semibold">Faldo Febiano</span> — Kelas <span class="text-purple-500 dark:text-purple-400 font-semibold">XI RPL 3</span>
+                </p>
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+                    &copy; 2026 Proyek Pemrograman Web (Tailwind CSS). All rights reserved.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 text-sm font-semibold">
+                <a href="https://weverse.io/illit" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:scale-105 transition">
+                    Weverse Official
+                </a>
+                <a href="https://www.instagram.com/illit_official/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-pink-50 dark:bg-pink-950/50 text-pink-600 dark:text-pink-300 border border-pink-200 dark:border-pink-800 hover:scale-105 transition">
+                    Instagram Official
+                </a>
+                <a href="https://www.youtube.com/@ILLIT_official" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-rose-50 dark:bg-rose-950/50 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-800 hover:scale-105 transition">
+                    YouTube Official
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="memberModal" onclick="closeMemberModal(event)" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+        <div onclick="event.stopPropagation()" class="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-pink-200 dark:border-purple-800 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="hideModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-pink-100 dark:bg-slate-800 text-pink-600 dark:text-pink-300 hover:bg-pink-200 dark:hover:bg-slate-700 flex items-center justify-center font-bold transition cursor-pointer">
+                ✕
+            </button>
+
+            <div class="flex items-center gap-3 mb-4">
+                <span id="modalEmoji" class="text-3xl bg-pink-100 dark:bg-purple-900/50 w-14 h-14 rounded-2xl flex items-center justify-center"></span>
+                <div>
+                    <span id="modalRole" class="text-xs font-semibold uppercase tracking-wider text-pink-500 dark:text-pink-300"></span>
+                    <h3 id="modalName" class="text-2xl font-extrabold text-slate-800 dark:text-white"></h3>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-xs sm:text-sm bg-rose-50/70 dark:bg-slate-800/80 p-4 rounded-2xl border border-pink-100 dark:border-slate-700 mb-4">
+                <div>
+                    <span class="text-slate-400 block">Nama Lengkap</span>
+                    <span id="modalFullName" class="font-semibold text-slate-700 dark:text-slate-200"></span>
+                </div>
+                <div>
+                    <span class="text-slate-400 block">Tanggal Lahir</span>
+                    <span id="modalBirth" class="font-semibold text-slate-700 dark:text-slate-200"></span>
+                </div>
+                <div>
+                    <span class="text-slate-400 block">Kebangsaan</span>
+                    <span id="modalNation" class="font-semibold text-slate-700 dark:text-slate-200"></span>
+                </div>
+                <div>
+                    <span class="text-slate-400 block">MBTI</span>
+                    <span id="modalMbti" class="font-semibold text-slate-700 dark:text-slate-200"></span>
+                </div>
+            </div>
+
+            <p id="modalBio" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5"></p>
+
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-purple-500 dark:text-purple-300 mb-2.5">
+                    📸 Galeri Konsep Foto
+                </p>
+                <div class="grid grid-cols-3 gap-2.5">
+                    <div class="aspect-square rounded-2xl overflow-hidden border border-pink-100 dark:border-slate-700 bg-pink-50 dark:bg-slate-800">
+                        <img id="modalImg1" src="" alt="Foto Member 1" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="aspect-square rounded-2xl overflow-hidden border border-pink-100 dark:border-slate-700 bg-pink-50 dark:bg-slate-800">
+                        <img id="modalImg2" src="" alt="Foto Member 2" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="aspect-square rounded-2xl overflow-hidden border border-pink-100 dark:border-slate-700 bg-pink-50 dark:bg-slate-800">
+                        <img id="modalImg3" src="" alt="Foto Member 3" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const membersData = {
+            yunah: {
+                emoji: '🐆',
+                name: 'YUNAH (윤아)',
+                role: 'Unnie Line • All-Rounder & Mood Maker',
+                fullName: 'Noh Yun-ah (노윤아)',
+                birth: '15 Januari 2004',
+                nation: 'Korea Selatan 🇰🇷',
+                mbti: 'ENFP',
+                bio: 'Member tertua di ILLIT yang dikenal memiliki karisma panggung kuat, vokal stabil, serta kepribadian ceria dan humoris yang selalu mencairkan suasana tim.',
+                img1: 'yunah.jpg',
+                img2: 'yunah2.jpg',
+                img3: 'yunah3.jpg'
+            },
+            minju: {
+                emoji: '🐰',
+                name: 'MINJU (민주)',
+                role: 'Main Vocalist • Dreamy Voice',
+                fullName: 'Park Min-ju (박민주)',
+                birth: '11 Mei 2004',
+                nation: 'Korea Selatan 🇰🇷',
+                mbti: 'ISTP',
+                bio: 'Memiliki warna suara unik dan lembut yang menjadi ciri khas lagu-lagu ILLIT. Dikenal kalem, perhatian kepada para adik di grup, dan memiliki visual bak peri.',
+                img1: 'minju.jpg',
+                img2: 'minju2.jpg',
+                img3: 'minju3.jpg'
+            },
+            moka: {
+                emoji: '☕',
+                name: 'MOKA (모카)',
+                role: 'Lead Dancer • Stage Expression Fairy',
+                fullName: 'Sakai Moka (境 萌花)',
+                birth: '8 Oktober 2004',
+                nation: 'Jepang 🇯🇵',
+                mbti: 'ISFP',
+                bio: 'Member asal Fukuoka, Jepang yang memikat GLLIT lewat ekspresi wajah ekspresif saat tampil dan gaya menari yang penuh energi serta manis.',
+                img1: 'moka.jpg',
+                img2: 'moka2.jpg',
+                img3: 'moka3.jpg'
+            },
+            wonhee: {
+                emoji: '🐿️',
+                name: 'WONHEE (원희)',
+                role: 'Vocalist & Center • Pure Charm',
+                fullName: 'Lee Won-hee (이원희)',
+                birth: '26 Juni 2007',
+                nation: 'Korea Selatan 🇰🇷',
+                mbti: 'ISFP',
+                bio: 'Dikenal dengan pesona polos, vokal jernih menyegarkan, serta perkembangan bakat yang sangat pesat sejak masa survival R U Next?.',
+                img1: 'wonhee.jpg',
+                img2: 'wonhee2.jpg',
+                img3: 'wonhee3.jpg'
+            },
+            iroha: {
+                emoji: '🐢',
+                name: 'IROHA (이로하)',
+                role: 'Main Dancer & Maknae',
+                fullName: 'Hokazono Iroha (外園 彩羽)',
+                birth: '4 Februari 2008',
+                nation: 'Jepang 🇯🇵',
+                mbti: 'INFJ',
+                bio: 'Anggota termuda (maknae) asal Tokyo yang sudah berlatih menari sejak usia 3 tahun. Memukau penggemar dengan gerakan hip-hop presisi di balik senyum manisnya.',
+                img1: 'iroha.jpg',
+                img2: 'iroha2.jpg',
+                img3: 'iroha3.jpg'
+            }
+        };
+
+        function openMemberModal(key) {
+            const m = membersData[key];
+            document.getElementById('modalEmoji').textContent = m.emoji;
+            document.getElementById('modalRole').textContent = m.role;
+            document.getElementById('modalName').textContent = m.name;
+            document.getElementById('modalFullName').textContent = m.fullName;
+            document.getElementById('modalBirth').textContent = m.birth;
+            document.getElementById('modalNation').textContent = m.nation;
+            document.getElementById('modalMbti').textContent = m.mbti;
+            document.getElementById('modalBio').textContent = m.bio;
+
+            document.getElementById('modalImg1').src = m.img1;
+            document.getElementById('modalImg1').alt = m.name + ' 1';
+            document.getElementById('modalImg2').src = m.img2;
+            document.getElementById('modalImg2').alt = m.name + ' 2';
+            document.getElementById('modalImg3').src = m.img3;
+            document.getElementById('modalImg3').alt = m.name + ' 3';
+
+            const modal = document.getElementById('memberModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function hideModal() {
+            const modal = document.getElementById('memberModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function closeMemberModal(event) {
+            if (event.target.id === 'memberModal') {
+                hideModal();
+            }
+        }
+
+        function selectPlan(planName) {
+            document.getElementById('selectedPlanInput').value = planName;
+            document.getElementById('subscribeSuccess').classList.add('hidden');
+        }
+
+        function handleSubscribe(event) {
+            event.preventDefault();
+            document.getElementById('subscribeSuccess').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
